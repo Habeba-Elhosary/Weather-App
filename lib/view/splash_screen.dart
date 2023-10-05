@@ -1,8 +1,6 @@
-import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:page_transition/page_transition.dart';
-import 'package:weather_app/constants/color_constants.dart';
+import '../constants/color_constants.dart';
 import '../constants/text_constants.dart';
 import 'home_screen.dart';
 
@@ -21,57 +19,63 @@ class SplashScreenState extends State<SplashScreen>
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: const Duration(seconds:5),
+      duration:
+          const Duration(milliseconds: 2000), // Adjust the duration as needed.
     );
     _animationController.forward();
   }
 
   @override
   Widget build(BuildContext context) {
+    Future.delayed(const Duration(milliseconds: 2500), () {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+          builder: (context) =>
+              const HomeScreen(),
+        ),
+      );
+    });
+
     return Scaffold(
-      body: Stack(
-        children: [
-          Image.asset(
-            'assets/images/background.png',
-            fit: BoxFit.cover,
-            width: double.infinity,
-            height: double.infinity,
-          ),
-          AnimatedBuilder(
-            animation: _animationController,
-            builder: (context, child) {
-              return Opacity(
-                  opacity: _animationController.value,
-                  child: AnimatedSplashScreen(
-                    duration: 1500,
-                    splashIconSize: 200.sp,
-                    splashTransition: SplashTransition.fadeTransition,
-                    pageTransitionType: PageTransitionType.fade,
-                    animationDuration: const Duration(milliseconds: 1500),
-                    splash: Column(
-                      children: [
-                        const Image(
-                          image: AssetImage("assets/images/logo.png"),
-                        ),
-                        SizedBox(height: 30.h),
-                        Text('Weather App',
-                            style: AppTextStyle().textBlueButton)
-                      ],
+      body: AnimatedBuilder(
+        animation: _animationController,
+        builder: (context, child) {
+          return Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  MyColors.blue,
+                  MyColors.black,
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+            ),
+            child: Center(
+              child: Opacity(
+                opacity: _animationController.value,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Image.asset('assets/images/logo.png',width: 150.w,),
+                    Text(
+                      "Weather App",
+                      style:AppTextStyle().headlineWhite
                     ),
-                    nextScreen: const HomeScreen(),
-                  ),
-              );
-            },
-          ),
-        ],
+                  ],
+                ),
+              ),
+            ),
+          );
+        },
       ),
     );
   }
 
   @override
   void dispose() {
-    _animationController
-        .dispose();
+    _animationController.dispose();
     super.dispose();
   }
 }
