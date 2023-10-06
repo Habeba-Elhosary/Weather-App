@@ -1,45 +1,45 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+// import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:weather_app/controller/global_controller.dart';
 import '../constants/color_constants.dart';
+import '../widgets/header_widget.dart';
 
 class OnlineHomeScreen extends StatefulWidget {
-  const OnlineHomeScreen({super.key});
+  const OnlineHomeScreen({Key? key}) : super(key: key);
 
   @override
   State<OnlineHomeScreen> createState() => _OnlineHomeScreenState();
 }
 
 class _OnlineHomeScreenState extends State<OnlineHomeScreen> {
+  final GlobalController globalController =
+      Get.put(GlobalController(), permanent: true);
+
+  @override
+  void initState() {
+    super.initState();
+    globalController.checkLocationStatus();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MyColors.black ,
-      body: SingleChildScrollView(
-        child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 50.sp, vertical: 90.sp),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  const Text("Mansoura",
-                      style: TextStyle(color: MyColors.white)),
-                  SizedBox(
-                    width: 100.w,
+      backgroundColor: MyColors.black,
+      body: SafeArea(
+        child: Obx(
+          () => globalController.checkLoading().isTrue
+              ? const Center(
+                  child: CircularProgressIndicator(
+                    color: MyColors.blue,
                   ),
-                  Container(
-                    color: MyColors.grey,
-                  )
-                ],
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
-              const Text("October 10 , 2023 ",
-                  style: TextStyle(color: MyColors.white))
+                )
+              : ListView(
+            scrollDirection: Axis.vertical,
+            children: const [
+              HeaderWidget(),
             ],
-          ),
+          )
         ),
       ),
     );

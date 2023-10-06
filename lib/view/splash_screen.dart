@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import '../constants/color_constants.dart';
 import '../constants/text_constants.dart';
-import 'home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -28,12 +28,7 @@ class SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     Future.delayed(const Duration(milliseconds: 2500), () {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (context) =>
-              const HomeScreen(),
-        ),
-      );
+      Get.offNamed("/home_screen");
     });
 
     return Scaffold(
@@ -58,11 +53,11 @@ class SplashScreenState extends State<SplashScreen>
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Image.asset('assets/images/logo.png',width: 150.w,),
-                    Text(
-                      "Weather App",
-                      style:AppTextStyle().headlineWhite
+                    Image.asset(
+                      'assets/images/logo.png',
+                      width: 150.w,
                     ),
+                    Text("Weather App", style: AppTextStyle().headlineWhite),
                   ],
                 ),
               ),
