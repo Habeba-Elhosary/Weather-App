@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import '../constants/color_constants.dart';
-import '../constants/text_constants.dart';
+import 'package:weather_app/constants/routes_constants.dart';
+import '../../constants/color_constants.dart';
+import '../../constants/text_constants.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -20,7 +21,7 @@ class SplashScreenState extends State<SplashScreen>
     _animationController = AnimationController(
       vsync: this,
       duration:
-          const Duration(milliseconds: 2000), // Adjust the duration as needed.
+      const Duration(milliseconds: 2000), // Adjust the duration as needed.
     );
     _animationController.forward();
   }
@@ -28,7 +29,7 @@ class SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     Future.delayed(const Duration(milliseconds: 2500), () {
-      Get.offNamed("/home_screen");
+      Get.offNamed(homeScreen);
     });
 
     return Scaffold(

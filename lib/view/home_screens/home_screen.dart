@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_offline/flutter_offline.dart';
+import 'package:weather_app/constants/color_constants.dart';
 import 'offline_home_screen.dart';
 import 'online_home_screen.dart';
 
@@ -22,7 +23,9 @@ class HomeScreen extends StatelessWidget {
             return const OfflineHomeScreen();
           }
         },
-        child: Center(child:Image.asset('assets/images/loading.gif') ,),
+        child: const Center(
+          child: CircularProgressIndicator(color: MyColors.blue),
+        ),
       ),
     );
   }

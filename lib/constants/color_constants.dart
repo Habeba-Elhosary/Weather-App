@@ -5,5 +5,5 @@ class MyColors {
   static const Color white = Color(0xffffffff);
   static const Color grey = Color(0xff2F2F2F);
   static const Color lightGrey = Color(0xff606060);
-  static const Color blue = Color(0xFF7AC4C4);
+  static const Color blue = Color(0xff67b9ff);
 }
