@@ -4,10 +4,7 @@ class Assets {
 
   static const String iconsClouds = 'assets/icons/clouds.png';
   static const String iconsHumidity = 'assets/icons/humidity.png';
-  static const String iconsLunchIcon = 'assets/icons/lunchIcon.png';
-  static const String iconsSplashCloud = 'assets/icons/splashCloud.png';
-  static const String iconsSplashIcon = 'assets/icons/splashIcon.png';
-  static const String iconsWindspeed = 'assets/icons/windspeed.png';
+  static const String iconsWindSpeed = 'assets/icons/windSpeed.png';
   static const String imagesLogo = 'assets/images/logo.png';
   static const String imagesNoInternet = 'assets/images/noInternet.png';
   static const String weather01d = 'assets/weather/01d.png';

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import '../../constants/color_constants.dart';
-import '../../controller/home_screen_controller.dart';
-import '../../widgets/current_weather.dart';
-import '../../widgets/header_widget.dart';
-import '../../widgets/weatherDetails.dart';
+import 'package:weather_app/view/home_screens/online_home_screen/sections/header_widget.dart';
+import 'package:weather_app/view/home_screens/online_home_screen/sections/weather_details.dart';
+import '../../../constants/color_constants.dart';
+import '../../../controller/home_screen_controller.dart';
+import 'sections/current_weather.dart';
 
 class OnlineHomeScreen extends GetView<HomeScreenController> {
   const OnlineHomeScreen({super.key});
@@ -22,15 +22,14 @@ class OnlineHomeScreen extends GetView<HomeScreenController> {
             : SingleChildScrollView(
                 child: Padding(
                   padding:
-                      EdgeInsets.symmetric(horizontal: 30.sp, vertical: 70.sp),
+                      EdgeInsets.symmetric(horizontal: 30.sp, vertical: 75.sp),
                   child: Column(
                     children: [
                       const HeaderWidget(),
-                      SizedBox(height: 20.h),
+                      SizedBox(height: 15.h),
                       const CurrentWeather(),
-                      SizedBox(height: 20.h),
-                      const WeatherDetail(),
-                      SizedBox(height: 20.h),
+                      SizedBox(height: 15.h),
+                      const WeatherDetails(),
                       // Center(
                       //   child: InkWell(
                       //     onTap: () => Navigator.push(

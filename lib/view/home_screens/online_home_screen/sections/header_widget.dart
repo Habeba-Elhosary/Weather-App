@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:weather_app/constants/text_constants.dart';
-import '../controller/home_screen_controller.dart';
+import '../../../../controller/home_screen_controller.dart';
 
 class HeaderWidget extends GetView<HomeScreenController> {
   const HeaderWidget({super.key});
@@ -17,14 +17,14 @@ class HeaderWidget extends GetView<HomeScreenController> {
           children: [
             Text(
               controller.city.value,
-              style: AppTextStyle().headlineWhite.copyWith(fontSize: 20.sp),
+              style: AppTextStyle().headlineWhite.copyWith(fontSize: 22.sp),
             ),
-            SizedBox(height: 7.h),
+            SizedBox(height: 5.h),
             Text(
               date,
               style: AppTextStyle()
                   .subTitleBlue
-                  .copyWith(fontSize: 15.sp, fontWeight: FontWeight.w600),
+                  .copyWith(fontSize: 18.sp, fontWeight: FontWeight.w600),
             ),
           ],
         ),
