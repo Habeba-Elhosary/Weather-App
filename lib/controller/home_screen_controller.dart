@@ -1,6 +1,7 @@
 import 'package:geocoding/geocoding.dart';
 import 'package:get/get.dart';
 import 'package:weather_app/model/weather_model.dart';
+import '../model/forecast_model.dart';
 import '../service/api_service.dart';
 import '../service/location_service.dart';
 
@@ -8,7 +9,9 @@ class HomeScreenController extends GetxController {
 
   final LocationService _locationService = LocationService();
   final WeatherService _weatherService = WeatherService();
+  final ForecastService _forecastService = ForecastService();
   Rx<WeatherModel> weather = WeatherModel.empty().obs;
+  Rx<ForecastModel> forecast = ForecastModel.empty().obs;
 
   RxString city = ''.obs;
   RxString? cityArea = ''.obs;
@@ -24,7 +27,10 @@ class HomeScreenController extends GetxController {
   @override
   void onInit() async {
     super.onInit();
-    _getUserLocation().then((value) => fetchWeatherData());
+    _getUserLocation().then((value){
+      fetchWeatherData();
+      fetchForecastData();
+    });
   }
 
 
@@ -35,6 +41,7 @@ class HomeScreenController extends GetxController {
       _longitude.value = position.longitude;
       _isLoading.value = false;
       await fetchWeatherData();
+      await fetchForecastData();
       getUserAddress();
     } catch (e) {
       print("Error: $e");
@@ -49,6 +56,19 @@ class HomeScreenController extends GetxController {
         _longitude.value,
       );
       weather.value = weatherData;
+    } catch (e) {
+      print("Error: $e");
+      // Handle the error gracefully, show a message, etc.
+    }
+  }
+
+  Future<void> fetchForecastData() async {
+    try {
+      final forecastData = await _forecastService.fetchForecastData(
+        _latitude.value,
+        _longitude.value,
+      );
+      forecast.value = forecastData;
     } catch (e) {
       print("Error: $e");
       // Handle the error gracefully, show a message, etc.

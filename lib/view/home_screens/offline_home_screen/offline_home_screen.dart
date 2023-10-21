@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_state_manager/src/simple/get_view.dart';
 import '../../../constants/color_constants.dart';
 import '../../../constants/text_constants.dart';
+import '../../../controller/home_screen_controller.dart';
 
-class OfflineHomeScreen extends StatelessWidget {
+class OfflineHomeScreen extends GetView<HomeScreenController> {
   const OfflineHomeScreen({super.key});
 
   @override

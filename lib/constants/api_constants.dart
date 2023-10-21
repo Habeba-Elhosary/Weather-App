@@ -7,4 +7,4 @@ const baseURL = 'https://api.openweathermap.org/data/2.5';
 
 
 //forecast weather for 7 days
-// https://api.openweathermap.org/data/2.5/forecast?lat=25&lon=25&appid={{appID}}&cnt=7&units=metric&exclude=minutely&lang=en
+// https://api.openweathermap.org/data/2.5/forecast?lat=25&lon=25&appid={{appID}}&units=metric&exclude=minutely&lang=en
