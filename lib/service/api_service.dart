@@ -28,7 +28,7 @@ class ForecastService {
       final data2 = jsonDecode(response.body);
       return ForecastModel.fromJson(data2);
     } else {
-      throw Exception('Error fetching weather data');
+      throw Exception('Error fetching Forecast data');
     }
   }
 }
