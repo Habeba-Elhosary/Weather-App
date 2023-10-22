@@ -4,6 +4,7 @@ import 'package:weather_app/view/home_screens/offline_home_screen/offline_home_s
 import 'package:weather_app/view/search_screen/search_screen.dart';
 import '../view/home_screens/home_screen/home_screen.dart';
 import '../view/home_screens/online_home_screen/online_home_screen.dart';
+import '../view/search_screen/search_details_screen.dart';
 import '../view/splash_screen/splash_screen.dart';
 import 'bindings.dart';
 
@@ -38,6 +39,11 @@ class RouteGenerator {
       GetPage(
         name: '/search_screen/search_screen',
         page: () => const SearchScreen(),
+        binding: ScreenBindings(),
+      ),
+      GetPage(
+        name: '/search_screen/search_details_screen',
+        page: () => const SearchDetailsScreen(),
         binding: ScreenBindings(),
       ),
     ];

@@ -6,7 +6,7 @@ import 'package:weather_app/view/home_screens/online_home_screen/sections/weathe
 import '../../../constants/color_constants.dart';
 import '../../../constants/routes_constants.dart';
 import '../../../constants/text_constants.dart';
-import '../../../controller/home_screen_controller.dart';
+import '../../../controller/home&forecast_screen_controller.dart';
 import '../../../widgets/button.dart';
 import 'sections/current_weather.dart';
 

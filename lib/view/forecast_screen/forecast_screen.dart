@@ -5,8 +5,8 @@ import 'package:weather_app/constants/color_constants.dart';
 import 'package:weather_app/view/forecast_screen/sections/chart.dart';
 import 'package:weather_app/view/forecast_screen/sections/forecast_details.dart';
 import 'package:weather_app/view/forecast_screen/sections/header.dart';
-import '../../constants/text_constants.dart';
-import '../../controller/home_screen_controller.dart';
+
+import '../../controller/home&forecast_screen_controller.dart';
 
 class ForecastScreen extends GetView<HomeScreenController> {
   const ForecastScreen({super.key});

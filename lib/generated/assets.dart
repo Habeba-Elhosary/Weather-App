@@ -7,6 +7,7 @@ class Assets {
   static const String iconsWindSpeed = 'assets/icons/windSpeed.png';
   static const String imagesLogo = 'assets/images/logo.png';
   static const String imagesNoInternet = 'assets/images/noInternet.png';
+  static const String imagesSearch = 'assets/images/search.png';
   static const String weather01d = 'assets/weather/01d.png';
   static const String weather01n = 'assets/weather/01n.png';
   static const String weather02d = 'assets/weather/02d.png';

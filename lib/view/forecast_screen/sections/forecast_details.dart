@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../../../../constants/color_constants.dart';
 import '../../../../constants/text_constants.dart';
-import '../../../../controller/home_screen_controller.dart';
+import '../../../controller/home&forecast_screen_controller.dart';
 import '../../../model/forecast_model.dart';
 
 class ForecastDetails extends GetView<HomeScreenController> {

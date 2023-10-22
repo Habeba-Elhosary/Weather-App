@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:weather_app/controller/home_screen_controller.dart';
 import '../../../constants/color_constants.dart';
 import '../../../constants/text_constants.dart';
+import '../../../controller/home&forecast_screen_controller.dart';
 import '../../../model/forecast_model.dart';
 
 class MyChart extends GetView<HomeScreenController> {
@@ -40,7 +40,7 @@ class MyChart extends GetView<HomeScreenController> {
                 xValueMapper: (ListElement data, _) => data.dtTxt,
                 yValueMapper: (ListElement data, _) => data.main.temp.round(),
                 color: MyColors.blue,
-                animationDuration: 4000,
+                animationDuration: 2500,
               ),
             ],
           ),
