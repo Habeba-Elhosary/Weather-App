@@ -5,6 +5,7 @@ class Assets {
   static const String iconsClouds = 'assets/icons/clouds.png';
   static const String iconsHumidity = 'assets/icons/humidity.png';
   static const String iconsWindSpeed = 'assets/icons/windSpeed.png';
+  static const String imagesGit = 'assets/images/git.png';
   static const String imagesLogo = 'assets/images/logo.png';
   static const String imagesLogo2 = 'assets/images/logo2.png';
   static const String imagesNoInternet = 'assets/images/noInternet.png';

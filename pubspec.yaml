@@ -38,7 +38,6 @@ flutter_icons:
   ios : true
   image_path : "assets/images/logo2.png"
 
-
 flutter:
   uses-material-design: true
 
