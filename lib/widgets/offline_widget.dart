@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_offline/flutter_offline.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
-import 'package:weather_app/constants/color_constants.dart';
 import '../../../controller/global_controller.dart';
-import '../offline_home_screen/offline_home_screen.dart';
-import '../online_home_screen/online_home_screen.dart';
+import '../view/offline_screen/offline_screen.dart';
 
-class HomeScreen extends GetView<GlobalController> {
-  const HomeScreen({super.key});
+class OfflineWrapper extends GetView<GlobalController> {
+  final Widget child;
+  const OfflineWrapper({required this.child, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,14 +19,12 @@ class HomeScreen extends GetView<GlobalController> {
         ) {
           final bool connected = connectivity != ConnectivityResult.none;
           if (connected) {
-            return const OnlineHomeScreen();
+            return child;
           } else {
-            return const OfflineHomeScreen();
+            return const OfflineScreen();
           }
         },
-        child: const Center(
-          child: CircularProgressIndicator(color:MyColors.blue),
-        ),
+        child:child
       ),
     );
   }

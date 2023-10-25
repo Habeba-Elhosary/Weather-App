@@ -29,7 +29,7 @@ class SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     Future.delayed(const Duration(milliseconds: 2500), () {
-      Get.offNamed(homeScreen);
+      Get.offNamed(onlineHomeScreen);
     });
 
     return Scaffold(

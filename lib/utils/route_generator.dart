@@ -1,10 +1,9 @@
 import 'package:get/get.dart';
 import 'package:weather_app/view/forecast_screen/forecast_screen.dart';
-import 'package:weather_app/view/home_screens/offline_home_screen/offline_home_screen.dart';
 import 'package:weather_app/view/search_screen/search_details_screen.dart';
 import 'package:weather_app/view/search_screen/search_screen.dart';
-import '../view/home_screens/home_screen/home_screen.dart';
-import '../view/home_screens/online_home_screen/online_home_screen.dart';
+import '../view/offline_screen/offline_screen.dart';
+import '../view/online_home_screen/online_home_screen.dart';
 import '../view/splash_screen/splash_screen.dart';
 import 'bindings.dart';
 
@@ -17,18 +16,13 @@ class RouteGenerator {
         binding: ScreenBindings(),
       ),
       GetPage(
-        name: '/home_screens/home_screen/home_screen',
-        page: () => const HomeScreen(),
-        binding: ScreenBindings(),
-      ),
-      GetPage(
-        name: '/home_screens/online_home_screen/online_home_screen',
+        name: '/online_home_screen/online_home_screen',
         page: () => const OnlineHomeScreen(),
         binding: ScreenBindings(),
       ),
       GetPage(
-        name: '/home_screens/offline_home_screen/offline_home_screen',
-        page: () => const OfflineHomeScreen(),
+        name: '/offline_screen/offline_screen',
+        page: () => const OfflineScreen(),
         binding: ScreenBindings(),
       ),
       GetPage(

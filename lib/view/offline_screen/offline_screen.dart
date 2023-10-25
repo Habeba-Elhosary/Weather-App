@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
-import '../../../constants/color_constants.dart';
-import '../../../constants/text_constants.dart';
-import '../../../controller/global_controller.dart';
+import '../../constants/color_constants.dart';
+import '../../constants/text_constants.dart';
+import '../../controller/global_controller.dart';
 
-class OfflineHomeScreen extends GetView<GlobalController> {
-  const OfflineHomeScreen({super.key});
+class OfflineScreen extends GetView<GlobalController> {
+  const OfflineScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

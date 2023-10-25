@@ -12,4 +12,3 @@ const baseURL = 'https://api.openweathermap.org/data/2.5';
 
 //search weather
 // https://api.openweathermap.org/data/2.5/weather?q=cairo&appid={{appID}}&units=metric&exclude=minutely&lang=en
-
