@@ -35,8 +35,7 @@ class ListElement {
     final dateTimeParts = DateTime.parse(json['dt_txt']).toLocal();
     final day = dateTimeParts.day.toString().padLeft(2, '0');
     final hour = dateTimeParts.hour.toString().padLeft(2, '0');
-    dtTxt = '$day/$hour';
-    // dtTxt = json['dt_txt'] ?? '';
+    dtTxt = '$day-$hour';
   }
 
   Map<String, dynamic> toJson() {

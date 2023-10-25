@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'package:weather_app/constants/api_constants.dart';
 import 'package:http/http.dart' as http;
 import 'package:weather_app/model/weather_model.dart';
-
 import '../model/forecast_model.dart';
 
 class WeatherService {
@@ -32,4 +31,17 @@ class ForecastService {
     }
   }
 }
-
+///********************************************************************************************
+class SearchService {
+  Future<WeatherModel> fetchSearchData (String cityName) async {
+    final searchURL = "$baseURL/weather?q=$cityName&appid=$apiKey&units=metric";
+    final response = await http.get(Uri.parse(searchURL));
+    print(response.body);
+    if (response.statusCode == 200) {
+      final data3 = jsonDecode(response.body);
+      return WeatherModel.fromJson(data3);
+    } else {
+      return WeatherModel.empty();
+    }
+  }
+}

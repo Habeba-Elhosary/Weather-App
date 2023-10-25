@@ -3,10 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../../../../constants/color_constants.dart';
 import '../../../../constants/text_constants.dart';
-import '../../../controller/home&forecast_screen_controller.dart';
+import '../../../controller/global_controller.dart';
 import '../../../model/forecast_model.dart';
 
-class ForecastDetails extends GetView<HomeScreenController> {
+class ForecastDetails extends GetView<GlobalController> {
   const ForecastDetails({super.key});
 
   @override
@@ -40,7 +40,7 @@ class ForecastDetails extends GetView<HomeScreenController> {
           child: Row(
             children: [
               Text(
-                "Day/Hour",
+                "Day-Hour",
                 style: AppTextStyle().headlineBlue.copyWith(fontSize: 12.sp),
               ),
               const Spacer(),

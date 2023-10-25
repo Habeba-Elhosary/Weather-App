@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_offline/flutter_offline.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:weather_app/constants/color_constants.dart';
-import '../../../controller/home&forecast_screen_controller.dart';
+import '../../../controller/global_controller.dart';
 import '../offline_home_screen/offline_home_screen.dart';
 import '../online_home_screen/online_home_screen.dart';
 
-class HomeScreen extends GetView<HomeScreenController> {
+class HomeScreen extends GetView<GlobalController> {
   const HomeScreen({super.key});
 
   @override
@@ -26,7 +26,7 @@ class HomeScreen extends GetView<HomeScreenController> {
           }
         },
         child: const Center(
-          child: CircularProgressIndicator(color: MyColors.blue),
+          child: CircularProgressIndicator(color:MyColors.blue),
         ),
       ),
     );

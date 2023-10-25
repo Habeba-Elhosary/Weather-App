@@ -8,3 +8,8 @@ const baseURL = 'https://api.openweathermap.org/data/2.5';
 
 //forecast weather for 7 days
 // https://api.openweathermap.org/data/2.5/forecast?lat=25&lon=25&appid={{appID}}&units=metric&exclude=minutely&lang=en
+
+
+//search weather
+// https://api.openweathermap.org/data/2.5/weather?q=cairo&appid={{appID}}&units=metric&exclude=minutely&lang=en
+

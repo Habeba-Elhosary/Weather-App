@@ -5,12 +5,15 @@ import '../model/forecast_model.dart';
 import '../service/api_service.dart';
 import '../service/location_service.dart';
 
-class HomeScreenController extends GetxController {
+class GlobalController extends GetxController {
 
   final LocationService _locationService = LocationService();
   final WeatherService _weatherService = WeatherService();
   final ForecastService _forecastService = ForecastService();
+  final SearchService _searchService = SearchService();
+
   Rx<WeatherModel> weather = WeatherModel.empty().obs;
+  Rx<WeatherModel> weather2 = WeatherModel.empty().obs;
   Rx<ForecastModel> forecast = ForecastModel.empty().obs;
 
   RxString city = ''.obs;
@@ -32,7 +35,6 @@ class HomeScreenController extends GetxController {
       fetchForecastData();
     });
   }
-
 
   Future<void> _getUserLocation() async {
     try {
@@ -75,6 +77,15 @@ class HomeScreenController extends GetxController {
     }
   }
 
+  Future<void> fetchSearchData(String value) async {
+    try {
+      final searchData = await _searchService.fetchSearchData(value);
+      weather2.value = searchData;
+    } catch (e) {
+      print("Error: $e");
+    }
+  }
+
   getUserAddress() async {
     List<Placemark> placeMark =
     await placemarkFromCoordinates(_latitude.value, _longitude.value);
@@ -83,5 +94,4 @@ class HomeScreenController extends GetxController {
     city.value = place.locality!;
     cityArea!.value = place.subLocality!;
   }
-
 }

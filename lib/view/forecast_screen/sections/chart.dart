@@ -4,10 +4,10 @@ import 'package:get/get.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import '../../../constants/color_constants.dart';
 import '../../../constants/text_constants.dart';
-import '../../../controller/home&forecast_screen_controller.dart';
+import '../../../controller/global_controller.dart';
 import '../../../model/forecast_model.dart';
 
-class MyChart extends GetView<HomeScreenController> {
+class MyChart extends GetView<GlobalController> {
   const MyChart({super.key});
 
   @override
@@ -28,7 +28,7 @@ class MyChart extends GetView<HomeScreenController> {
           child: SfCartesianChart(
             primaryXAxis: CategoryAxis(
               labelStyle:AppTextStyle().subTitleBlue.copyWith(fontSize: 10.sp),
-              title: AxisTitle(text: 'Day/Hour'),
+              title: AxisTitle(text: 'Day-Hour'),
             ),
             primaryYAxis: NumericAxis(
               labelStyle:AppTextStyle().subTitleBlue.copyWith(fontSize: 10.sp),
@@ -49,5 +49,3 @@ class MyChart extends GetView<HomeScreenController> {
     });
   }
 }
-
-// return Text(controller.forecast.value.list[0].main.temp.round().toString(),style: AppTextStyle().headlineBlue,);

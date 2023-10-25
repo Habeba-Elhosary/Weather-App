@@ -5,10 +5,9 @@ import 'package:weather_app/constants/color_constants.dart';
 import 'package:weather_app/view/forecast_screen/sections/chart.dart';
 import 'package:weather_app/view/forecast_screen/sections/forecast_details.dart';
 import 'package:weather_app/view/forecast_screen/sections/header.dart';
+import '../../controller/global_controller.dart';
 
-import '../../controller/home&forecast_screen_controller.dart';
-
-class ForecastScreen extends GetView<HomeScreenController> {
+class ForecastScreen extends GetView<GlobalController> {
   const ForecastScreen({super.key});
 
   @override
@@ -25,8 +24,7 @@ class ForecastScreen extends GetView<HomeScreenController> {
               )
             : SingleChildScrollView(
                 child: Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 30.sp),
+                  padding: EdgeInsets.symmetric(horizontal: 30.sp),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [

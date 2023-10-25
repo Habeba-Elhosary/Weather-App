@@ -3,10 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:weather_app/constants/text_constants.dart';
+import '../../../../controller/global_controller.dart';
 
-import '../../../../controller/home&forecast_screen_controller.dart';
 
-class HeaderWidget extends GetView<HomeScreenController> {
+class HeaderWidget extends GetView<GlobalController> {
   const HeaderWidget({super.key});
 
   @override

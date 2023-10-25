@@ -22,9 +22,8 @@ dependencies:
   get: ^4.6.6
   intl: ^0.18.1
   connectivity_plus: ^4.0.1
-  syncfusion_flutter_charts: ^23.1.41
+  syncfusion_flutter_charts: ^23.1.42
   shimmer: ^3.0.0
-
 
 dev_dependencies:
   flutter_test:
